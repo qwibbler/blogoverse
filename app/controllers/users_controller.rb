@@ -1,6 +1,3 @@
 class UsersController < ApplicationController
-  # has_many :users
-
-  def show
-  end
+  def show; end
 end
