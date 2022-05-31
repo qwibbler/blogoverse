@@ -1,24 +1,39 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# BlogoVerse
 
-Things you may want to cover:
+> A Blogoverse for dedicated bloggers to blog in peace. Made with Ruby on Rails.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Rails
+- Rubocop
 
-* Configuration
+## Authors
 
-* Database creation
+👤 **Humaira Zaman**
 
-* Database initialization
+- GitHub: [@qwibbler](https://github.com/qwibbler)
+- Twitter: [@hmemaz](https://twitter.com/hmemaz)
+- LinkedIn: [Humaira Zaman](https://www.linkedin.com/in/hmemaz1994/)
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues, and feature requests are welcome!
 
-* Deployment instructions
+Feel free to check the [issues page](../../issues/).
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
