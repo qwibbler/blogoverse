@@ -10,6 +10,10 @@ RSpec.describe PostsController, type: :request do
     it 'renders correct template' do
       expect(response).to render_template(:index)
     end
+
+    it 'shows correct text' do
+      expect(response.body).to include('Placeholder for list of all posts')
+    end
   end
 
   describe 'Show: ' do
@@ -20,6 +24,10 @@ RSpec.describe PostsController, type: :request do
 
     it 'renders correct template' do
       expect(response).to render_template(:show)
+    end
+
+    it 'shows correct text' do
+      expect(response.body).to include('Placeholder for individual post')
     end
   end
 end
