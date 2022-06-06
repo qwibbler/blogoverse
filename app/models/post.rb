@@ -1,13 +1,13 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  def update_posts_count(update_user)
-    new = post.where(user_id: update_user.id).count
-    user.update(posts_counter: new)
+  def update_posts_count
+    user = self.user_id
+    new = Post.where(user_id: user).count
+    User.find(user).update(posts_counter: new)
   end
 
-  def recent_posts(recent_post);
-    comment.limit(5).where(post_id: recent_post.id).order(created_at: :asc)
+  def recent_comments
+    Comment.limit(5).where(post_id: self.id).order(created_at: :asc)
   end
-
 end
