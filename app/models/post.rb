@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :likes
+  has_many :comments, foreign_key: 'post_id'
+  has_many :likes, foreign_key: 'post_id'
 
   def update_posts_count
     new = Post.where(user_id:).count
