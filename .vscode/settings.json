@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "blogoverse_development",
+      "username": "postgres",
+      "database": "blogoverse_development"
+    }
+  ]
+}
