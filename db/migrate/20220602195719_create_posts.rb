@@ -8,6 +8,5 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.integer :comments_counter
       t.integer :likes_counter
     end
-    # add_reference :posts, :user, null: false, foreign_key: true
   end
 end
