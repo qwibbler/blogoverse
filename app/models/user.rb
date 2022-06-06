@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  def recent_posts(recent_user);
-    posts.limit(3).where(user_id: recent_user.id).order(created_at: :asc)
+  def recent_posts
+    Post.limit(3).where(user_id: self.id).order(created_at: :asc)
   end
 end
