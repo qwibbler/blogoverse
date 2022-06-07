@@ -1,1 +1,7 @@
-<h1>Placeholder for list of all posts</h1>
+<%= render partial: 'shared/user', object: @user %>
+<% @posts.each do |post| %>
+  <%= link_to user_post_path(post.user_id, post.id), :action => 'go' do %>
+    <%= render partial: 'shared/post', object: post %>
+  <% end %>
+  <%= render partial: 'shared/comments', object: post.recent_comments %>
+<% end %>

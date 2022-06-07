@@ -1,1 +1,13 @@
-<h1>User page with posts by user</h1>
+<%= render partial: 'shared/user', object: @user %>
+
+<div class="bio">
+  Bio
+
+  <%= @user.bio %>
+</div>
+
+<div class="posts">
+  <%= render partial: 'shared/post', collection: @posts %>
+</div>
+
+<%= link_to "See All Posts", user_posts_path(@user), class: "btn" %>
