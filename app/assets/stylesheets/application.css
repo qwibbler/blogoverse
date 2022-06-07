@@ -23,6 +23,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
+  color: black;
 }
 
 body {
@@ -81,7 +82,6 @@ h1 {
   align-items: flex-start ;
   justify-content: center;
   min-width: 8rem;
-  color: black;
 }
 
 small {
@@ -94,6 +94,7 @@ small {
 
 h2, h3 {
   font-family: 'Caveat', cursive;
+  font-size: x-large;
   margin: 0.25rem 0;
   align-self: flex-start;
 }
@@ -108,8 +109,6 @@ h2, h3 {
   background: #ffffff;
   position: relative;
   text-align: center;
-  color: black;
-  text-decoration: none;
   width: 6.25rem;
 }
 .btn::before {
@@ -126,6 +125,12 @@ h2, h3 {
   box-shadow: 2px 3px 3px #000000bf;
 }
 
-.comments {
+.grid > .comments {
   margin-top: -1.5rem;
+}
+
+.headline {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

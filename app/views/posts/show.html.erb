@@ -1,12 +1,11 @@
-<div class="post">
-  <h3><%= @post.title %> by <%= @post.user.name %> </h3>
-  Comments: <%= @post.comments_counter || 0 %>
-  Likes: <%= @post.likes_counter || 0 %>
+<div class="post text_box sketchy">
+  <div class="headline">
+    <h3><%= @post.title %> by <%= @post.user.name %> </h3>
+    <small>
+      Comments: <%= @post.comments_counter || 0 %>,
+      Likes: <%= @post.likes_counter || 0 %>
+    </small>
+  </div>
   <%= @post.text %>
 </div>
-
-<div class="comments">
-  <% @comments.each do |comment|  %>
-    <li><%= comment.user.name %>: <%= comment.text %></li>
-  <% end %>
-</div>
+<%= render partial: 'shared/comments', object: @comments %>

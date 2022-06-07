@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <header>Welcome to <h1>Blogoverse!</h1></header>
+    <%= link_to root_path, :action => 'go' do %>
+      <header>Welcome to <h1>Blogoverse!</h1></header>
+    <% end %>
     <main><%= yield %></main>
   </body>
 </html>
