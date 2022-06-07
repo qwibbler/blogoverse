@@ -1,8 +1,8 @@
-<div class="user header">
+<div class="grid">
   <%= render partial: 'shared/user', object: @user %>
-</div>
 
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/post', object: post %>
-  <%= render partial: 'shared/comments', object: post.recent_comments %>
-<% end %>
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post', object: post %>
+    <%= render partial: 'shared/comments', object: post.recent_comments %>
+  <% end %>
+</div>
