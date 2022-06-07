@@ -1,5 +1,5 @@
 <div class="post row">
-  <h3>Post #<%= post.id %>: <%= post.title %></h3>
+  <h3><%= post.title %></h3>
   <%= truncate(post.text, :length => 118) %>
   Comments: <%= post.comments_counter || 0 %>
   Likes: <%= post.likes_counter || 0 %>
