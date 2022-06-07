@@ -1,7 +1,8 @@
-<%= render partial: 'shared/user', object: @user %>
+<div class="user header">
+  <%= render partial: 'shared/user', object: @user %>
+</div>
+
 <% @posts.each do |post| %>
-  <%= link_to user_post_path(post.user_id, post.id), :action => 'go' do %>
-    <%= render partial: 'shared/post', object: post %>
-  <% end %>
+  <%= render partial: 'shared/post', object: post %>
   <%= render partial: 'shared/comments', object: post.recent_comments %>
 <% end %>

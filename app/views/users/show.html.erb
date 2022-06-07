@@ -1,13 +1,14 @@
-<%= render partial: 'shared/user', object: @user %>
+<div class="grid">
+  <%= render partial: 'shared/user', object: @user %>
 
-<div class="bio">
-  Bio
+  <div class="sketchy text_box">
+    <h3>Bio</h3>
+    <%= @user.bio %>
+  </div>
 
-  <%= @user.bio %>
+  <div class="posts">
+    <%= render partial: 'shared/post', collection: @posts %>
+  </div>
+
+  <%= see_all_btn %>
 </div>
-
-<div class="posts">
-  <%= render partial: 'shared/post', collection: @posts %>
-</div>
-
-<%= link_to "See All Posts", user_posts_path(@user), class: "btn" %>
