@@ -3,7 +3,7 @@ module UsersHelper
     out = ''
     unless @user.posts_counter.nil? || @user.posts_counter <= 3
       out << link_to('See All Posts', user_posts_path(@user),
-                     class: 'btn')
+                     class: 'btn sketchy')
     end
     out.html_safe
   end

@@ -39,9 +39,9 @@ main {
 }
 
 .sketchy {
-  border: 3px solid #333333;
+  border: 3px solid #333;
   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-  background: #ffffff;
+  background: #fff;
   position: relative;
 }
 
@@ -79,7 +79,7 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  align-items: flex-start ;
+  align-items: flex-start;
   justify-content: center;
   min-width: 8rem;
 }
@@ -92,7 +92,8 @@ small {
   height: 70px;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: 'Caveat', cursive;
   font-size: x-large;
   margin: 0.25rem 0;
@@ -104,13 +105,10 @@ h2, h3 {
 }
 
 .btn {
-  border: 3px solid #333333;
-  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-  background: #ffffff;
-  position: relative;
   text-align: center;
   width: 6.25rem;
 }
+
 .btn::before {
   content: '';
   border: 2px solid #353535;
