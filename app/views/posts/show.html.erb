@@ -1,6 +1,6 @@
 <div class="post fullpage text_box sketchy">
   <div class="headline">
-    <h3><%= @post.title %> by <%= @post.user.name %> </h3>
+    <h3><%= @post.title %> by <%= link_to @post.user.name, user_path(@post.user) %> </h3>
     <small>
       Comments: <%= @post.comments_counter || 0 %>,
       Likes: <%= @post.likes_counter || 0 %>

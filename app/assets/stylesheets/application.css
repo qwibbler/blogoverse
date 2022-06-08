@@ -88,6 +88,7 @@ h1 {
   align-items: flex-start;
   justify-content: center;
   min-width: 8rem;
+  text-align: left;
 }
 
 small {
@@ -98,7 +99,6 @@ h2,
 h3 {
   font-family: 'Caveat', cursive;
   font-size: x-large;
-  /* margin: 0.25rem 0; */
   align-self: flex-start;
 }
 
