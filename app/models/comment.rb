@@ -3,7 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   def update_comments_count
-    new = Comment.where(post_id:).count
-    Post.update(comments_counter: new)
+    post.update_comments_count
   end
 end
