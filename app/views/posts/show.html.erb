@@ -8,4 +8,4 @@
   </div>
   <%= @post.text %>
 </div>
-<%= render partial: 'shared/comments', object: @comments %>
+<%= list_comments(@comments) %>

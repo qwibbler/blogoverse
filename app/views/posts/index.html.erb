@@ -3,6 +3,6 @@
 
   <% @posts.each do |post| %>
     <%= render partial: 'shared/post', object: post %>
-    <%= render partial: 'shared/comments', object: post.recent_comments %>
+    <%= list_comments(post.recent_comments) %>
   <% end %>
 </div>
