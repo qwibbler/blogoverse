@@ -13,3 +13,124 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  padding: 1rem;
+  width: 95vw;
+  font-family: 'Kalam', cursive;
+  text-align: center;
+}
+
+.sketchy {
+  border: 3px solid #333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  background: #fff;
+  position: relative;
+}
+
+header {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  line-height: 0.5;
+}
+
+.grid {
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.fullpage.grid > * {
+  width: 80vw;
+}
+
+.user_list {
+  grid-template-columns: repeat(auto-fit, minmax(auto, 25rem));
+  gap: 1rem 5rem;
+}
+
+.user.grid {
+  grid-template-columns: 70px 1fr;
+}
+
+.text_box {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 8rem;
+  text-align: left;
+}
+
+small {
+  align-self: flex-end;
+}
+
+h2,
+h3 {
+  font-family: 'Caveat', cursive;
+  font-size: x-large;
+  align-self: flex-start;
+}
+
+.posts.grid {
+  gap: 0.2rem;
+}
+
+.btn#see_all {
+  text-align: center;
+  width: 6.25rem;
+}
+
+.btn::before {
+  content: '';
+  border: 2px solid #353535;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-48%, -48%, 0) scale(1.015) rotate(2.5deg);
+  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+  box-shadow: 2px 3px 3px #000000bf;
+}
+
+.grid > .comments {
+  margin-top: -1.5rem;
+}
+
+.headline {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

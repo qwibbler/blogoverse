@@ -1,0 +1,6 @@
+<div class="comments text_box sketchy">
+  <h4>Comments:</h4>
+  <% comments.each do |comment|  %>
+    <li><b><%= comment.user.name %>:</b> <%= comment.text %></li>
+  <% end %>
+</div>

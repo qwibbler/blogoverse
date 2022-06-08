@@ -4,8 +4,17 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: 'post_id'
 
   def update_posts_count
-    new = Post.where(user_id:).count
-    User.find(user_id).update(posts_counter: new)
+    user.update_posts_count
+  end
+
+  def update_likes_count
+    new = Like.where(post_id: id).count
+    update(likes_counter: new)
+  end
+
+  def update_comments_count
+    new = Comment.where(post_id: id).count
+    update(comments_counter: new)
   end
 
   def recent_comments

@@ -1,1 +1,14 @@
-<h1>User page with posts by user</h1>
+<div class="fullpage grid">
+  <%= render partial: 'shared/user', object: @user %>
+
+  <div class="sketchy text_box">
+    <h3>Bio</h3>
+    <%= bio %>
+  </div>
+
+  <div class="posts fullpage grid">
+    <%= render partial: 'shared/post', collection: @posts %>
+  </div>
+
+  <%= see_all_btn %>
+</div>

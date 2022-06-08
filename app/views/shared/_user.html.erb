@@ -1,0 +1,8 @@
+<div class="user grid">
+    <%= image_tag user.photo || '', style: 'height:70px;width:70px', class: 'profile-pic sketchy' %>
+
+    <%= link_to user_path(user), class:"user_info text_box sketchy" do %>
+      <h2 class="user_name"><%= user.name %></h2>
+      <small>Number of Posts: <%= user.posts_counter || 0 %></small>
+    <% end %>
+</div>

@@ -1,1 +1,8 @@
-<h1>Placeholder for list of all posts</h1>
+<div class="fullpage grid">
+  <%= render partial: 'shared/user', object: @user %>
+
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post', object: post %>
+    <%= list_comments(post.recent_comments) %>
+  <% end %>
+</div>

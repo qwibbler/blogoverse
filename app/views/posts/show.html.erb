@@ -1,1 +1,11 @@
-<h1>Placeholder for individual post</h1>
+<div class="post fullpage text_box sketchy">
+  <div class="headline">
+    <h3><%= @post.title %> by <%= link_to @post.user.name, user_path(@post.user) %> </h3>
+    <small>
+      Comments: <%= @post.comments_counter || 0 %>,
+      Likes: <%= @post.likes_counter || 0 %>
+    </small>
+  </div>
+  <%= @post.text %>
+</div>
+<%= list_comments(@comments) %>
