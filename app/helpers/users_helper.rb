@@ -1,4 +1,24 @@
 module UsersHelper
+  def list_users
+    out = ''
+    if @users.empty?
+      out << "<em style='text-align:center;'>Currently our 'verse is lonely. Please create users to join our <b>Blogoverse!</b></em>"
+    else
+      out << render(partial: 'shared/user', collection: @users)
+    end
+    out.html_safe
+  end
+
+  def bio
+    out = ''
+    out << if @user.bio.nil? || @user.bio.empty?
+             "<em style='text-align:center;'>A lovely member of our <b>Blogoverse!</b> community</em>"
+           else
+             @user.bio
+           end
+    out.html_safe
+  end
+
   def see_all_btn
     out = ''
     unless @user.posts_counter.nil? || @user.posts_counter <= 3
