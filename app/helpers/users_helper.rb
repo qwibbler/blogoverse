@@ -2,9 +2,7 @@ module UsersHelper
   def list_users
     out = ''
     out << if @users.empty?
-             "<em style='text-align:center;'>
-             Currently our 'verse is lonely. Please create users to join our <b>Blogoverse!</b>
-             </em>"
+             "<em style='text-align:center;'> #{t('no_users')} <b>Blogoverse!</b></em>"
            else
              render(partial: 'shared/user', collection: @users)
            end
@@ -14,7 +12,7 @@ module UsersHelper
   def bio
     out = ''
     out << if @user.bio.nil? || @user.bio.empty?
-             "<em style='text-align:center;'>A lovely member of our <b>Blogoverse!</b> community</em>"
+             t('no_bio')
            else
              @user.bio
            end

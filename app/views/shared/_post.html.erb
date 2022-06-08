@@ -1,10 +1,7 @@
-<%= link_to user_post_path(post.user_id, post.id), :action => 'go' do %>
+<%= link_to [post.user, post], :action => 'go' do %>
   <div class="post sketchy text_box">
     <h3><%= post.title %></h3>
     <%= truncate(post.text, :length => 118) %>
-    <small>
-      Comments: <%= post.comments_counter || 0 %>,
-      Likes: <%= post.likes_counter || 0 %>
-    </small>
+    <%= render partial: 'shared/comments_likes', locals: { post: post } %>
   </div>
 <% end %>

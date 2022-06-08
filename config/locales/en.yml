@@ -30,4 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome to "
+  bio: "Bio"
+  number_of_posts: "Number of Posts: "
+  comments: "Comments: "
+  likes: "Likes: "
+  see_all_posts: "See All Posts"
+  no_users: "Currently our 'verse is lonely. Please create users to join our "
+  no_bio: "<em style='text-align:center;'>A lovely member of our <b>Blogoverse!</b> community</em>"
