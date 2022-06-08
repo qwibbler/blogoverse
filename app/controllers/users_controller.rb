@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.order('updated_at DESC').all
+    @users.each { |user| user.update_posts_count }
+  end
+
   def show
     @user = User.find(params[:id])
     @posts = @user.recent_posts
-  end
-
-  def index
-    @users = User.all
+    @user.update_posts_count
   end
 end
