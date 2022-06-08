@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome_to: "Welcome to "
+  bio: "Bio"
+  number_of_posts: "Number of Posts: "
+  comments: "Comments: "
+  likes: "Likes: "

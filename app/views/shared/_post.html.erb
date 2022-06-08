@@ -3,8 +3,8 @@
     <h3><%= post.title %></h3>
     <%= truncate(post.text, :length => 118) %>
     <small>
-      Comments: <%= post.comments_counter || 0 %>,
-      Likes: <%= post.likes_counter || 0 %>
+      <%= t('.comments: ') %><%= post.comments_counter || 0 %>,
+      <%= t('.likes: ') %><%= post.likes_counter || 0 %>
     </small>
   </div>
 <% end %>

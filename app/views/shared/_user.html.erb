@@ -3,6 +3,6 @@
 
     <%= link_to user_path(user), class:"user_info text_box sketchy" do %>
       <h2 class="user_name"><%= user.name %></h2>
-      <small>Number of Posts: <%= user.posts_counter || 0 %></small>
+      <small><%= t('.number_of_posts: ') %><%= user.posts_counter || 0 %></small>
     <% end %>
 </div>
