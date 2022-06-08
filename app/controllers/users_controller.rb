@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.order('updated_at DESC').all
-    @users.each { |user| user.update_posts_count }
+    @users.each(&:update_posts_count)
   end
 
   def show

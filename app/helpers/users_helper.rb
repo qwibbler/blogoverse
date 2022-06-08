@@ -1,11 +1,13 @@
 module UsersHelper
   def list_users
     out = ''
-    if @users.empty?
-      out << "<em style='text-align:center;'>Currently our 'verse is lonely. Please create users to join our <b>Blogoverse!</b></em>"
-    else
-      out << render(partial: 'shared/user', collection: @users)
-    end
+    out << if @users.empty?
+             "<em style='text-align:center;'>
+             Currently our 'verse is lonely. Please create users to join our <b>Blogoverse!</b>
+             </em>"
+           else
+             render(partial: 'shared/user', collection: @users)
+           end
     out.html_safe
   end
 
@@ -23,7 +25,7 @@ module UsersHelper
     out = ''
     unless @user.posts_counter.nil? || @user.posts_counter <= 3
       out << link_to('See All Posts', user_posts_path(@user),
-                     class: 'btn sketchy')
+                     class: 'btn sketchy', id: 'see_all')
     end
     out.html_safe
   end

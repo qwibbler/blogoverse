@@ -62,14 +62,18 @@ h1 {
 
 .grid {
   display: grid;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
   text-align: left;
 }
 
+.fullpage.grid > * {
+  width: 80vw;
+}
+
 .user_list {
-  grid-template-columns: repeat(auto-fit, 25rem);
+  grid-template-columns: repeat(auto-fit, minmax(auto, 25rem));
   gap: 1rem 5rem;
 }
 
@@ -90,15 +94,11 @@ small {
   align-self: flex-end;
 }
 
-.user_info {
-  height: 70px;
-}
-
 h2,
 h3 {
   font-family: 'Caveat', cursive;
   font-size: x-large;
-  margin: 0.25rem 0;
+  /* margin: 0.25rem 0; */
   align-self: flex-start;
 }
 
@@ -106,7 +106,7 @@ h3 {
   gap: 0.2rem;
 }
 
-.btn {
+.btn#see_all {
   text-align: center;
   width: 6.25rem;
 }

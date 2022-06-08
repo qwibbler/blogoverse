@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="fullpage grid">
   <%= render partial: 'shared/user', object: @user %>
 
   <div class="sketchy text_box">
@@ -6,7 +6,7 @@
     <%= bio %>
   </div>
 
-  <div class="posts grid">
+  <div class="posts fullpage grid">
     <%= render partial: 'shared/post', collection: @posts %>
   </div>
 
