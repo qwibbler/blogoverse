@@ -9,6 +9,7 @@
     <h3><%= @post.title %> by <%= link_to @post.user.name, @post.user %> </h3>
     <%= render partial: 'shared/comments_likes', locals: { post: @post } %>
   </div>
+  <%= like_btn %>
   <%= @post.text %>
 </div>
 <%= list_comments(@comments) %>

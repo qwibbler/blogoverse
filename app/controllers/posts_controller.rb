@@ -2,9 +2,13 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(user_id: params[:user_id]).order('created_at DESC')
-    @posts.each do |post|
-      post.update_likes_count
-    end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: params[:id])
+    @comment = @post.comments.build
+    @like = @post.likes.build
   end
 
   def new
@@ -21,12 +25,5 @@ class PostsController < ApplicationController
       flash.now[:error] = t('post_error')
       render :new, locals: { post: @new_post }
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
-    @post.update_likes_count
-    @comments = Comment.where(post_id: params[:id])
-    @comment = @post.comments.build
   end
 end

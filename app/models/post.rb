@@ -20,4 +20,8 @@ class Post < ApplicationRecord
   def recent_comments
     Comment.limit(5).where(post_id: id).order(created_at: :asc)
   end
+
+  def liked?(user = @current_user)
+    !!likes.find { |like| like.user == user }
+  end
 end
