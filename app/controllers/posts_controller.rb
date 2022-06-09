@@ -10,23 +10,20 @@ class PostsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
+    render :new, locals: { post: Post.new }
   end
 
   def create
     @user = User.find(params[:user_id])
     @new_post = @user.posts.new(params.require(:post).permit(:title, :text))
-    respond_to do |format|
-      format.html do
-        if @new_post.save
-          flash[:success] = t('post_success')
-          redirect_to [@user, @new_post]
-        else
-          flash.now[:error] = t('post_error')
-          render :new
-        end
-      end
+    if @new_post.save
+      flash[:success] = t('post_success')
+      @new_post.update_posts_count
+      redirect_to [@user, @new_post]
+    else
+      flash.now[:error] = t('post_error')
+      render :new, locals: { post: @new_post }
     end
-    @new_post
   end
 
   def show

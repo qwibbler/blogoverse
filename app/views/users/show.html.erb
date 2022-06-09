@@ -6,6 +6,8 @@
     <%= bio %>
   </div>
 
+  <%= link_to 'New Post', new_user_post_path(@user), class: 'btn sketchy', id: 'new_post' %>
+
   <div class="posts fullpage grid">
     <%= render partial: 'shared/post', collection: @posts %>
   </div>

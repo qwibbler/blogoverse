@@ -1,0 +1,12 @@
+<%= form_with model: post, data: { behavior: "autosave" },
+url: user_posts_path(@user.id) do |f| %>
+  <div>
+    <%= f.label :title, t('post_title') %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :text, t('post_text') %>
+    <%= f.text_area :text %>
+  </div>
+  <%= f.submit %>
+<% end %>

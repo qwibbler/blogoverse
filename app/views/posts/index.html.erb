@@ -1,6 +1,8 @@
 <div class="fullpage grid">
   <%= render partial: 'shared/user', object: @user %>
 
+  <%= link_to 'New Post', new_user_post_path(@user), class: 'btn sketchy', id: 'new_post' %>
+
   <% @posts.each do |post| %>
     <%= render partial: 'shared/post', object: post %>
     <%= list_comments(post.recent_comments) %>

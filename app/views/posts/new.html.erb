@@ -1,13 +1,2 @@
 <h2><%= t('new_post') %></h2>
-<%= form_with model: Post.new,  scope: :post, data: { behavior: "autosave" }, url: user_posts_path(@user.id) do |f| %>
-  <div>
-    <%= f.label :title, t('post_title') %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :text, t('post_text') %>
-    <%= f.text_area :text %>
-  </div>
-  <%= f.submit %>
-
-<% end %>
+<%= render partial: 'posts/form', locals: { post: post } %>
