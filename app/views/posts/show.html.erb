@@ -1,3 +1,9 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <div class="post fullpage text_box sketchy">
   <div class="headline">
     <h3><%= @post.title %> by <%= link_to @post.user.name, @post.user %> </h3>
