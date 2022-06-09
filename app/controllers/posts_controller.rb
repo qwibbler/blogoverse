@@ -18,9 +18,9 @@ class PostsController < ApplicationController
   def create
     @new_post = @current_user.posts.new(params.require(:post).permit(:title, :text))
     if @new_post.save
-      flash[:success] = t('post_success')
+      # flash[:success] = t('post_success')
       @new_post.update_posts_count
-      redirect_to [@current_user, @new_post]
+      redirect_to [@current_user, @new_post], notice: t('post_success')
     else
       flash.now[:error] = t('post_error')
       render :new, locals: { post: @new_post }
