@@ -1,0 +1,11 @@
+<%= form_with model: @comment,
+url: user_post_comments_path(@comment.post.user, @comment.post),
+local: true do |f| %>
+  <p>
+    <%= f.label :text, @current_user.name + ' ' + t('comment_says') %>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

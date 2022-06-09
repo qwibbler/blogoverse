@@ -8,5 +8,5 @@ url: user_posts_path(@current_user.id) do |f| %>
     <%= f.label :text, t('post_text') %>
     <%= f.text_area :text %>
   </div>
-  <%= f.submit %>
+  <p><%= f.submit %></p>
 <% end %>

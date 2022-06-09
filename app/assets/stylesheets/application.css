@@ -106,11 +106,6 @@ h3 {
   gap: 0.2rem;
 }
 
-.btn#see_all {
-  text-align: center;
-  width: 6.25rem;
-}
-
 .btn::before {
   content: '';
   border: 2px solid #353535;
