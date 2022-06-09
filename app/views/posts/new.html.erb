@@ -1,0 +1,6 @@
+<%= render partial: 'post_form', locals: { post: post } %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
