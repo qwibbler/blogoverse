@@ -9,17 +9,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     render :new, locals: { post: Post.new }
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @new_post = @user.posts.new(params.require(:post).permit(:title, :text))
+    @new_post = @current_user.posts.new(params.require(:post).permit(:title, :text))
     if @new_post.save
       flash[:success] = t('post_success')
       @new_post.update_posts_count
-      redirect_to [@user, @new_post]
+      redirect_to [@current_user, @new_post]
     else
       flash.now[:error] = t('post_error')
       render :new, locals: { post: @new_post }

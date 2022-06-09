@@ -1,5 +1,5 @@
 <%= form_with model: post, data: { behavior: "autosave" },
-url: user_posts_path(@user.id) do |f| %>
+url: user_posts_path(@current_user.id) do |f| %>
   <div>
     <%= f.label :title, t('post_title') %>
     <%= f.text_field :title %>

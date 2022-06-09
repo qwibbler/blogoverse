@@ -13,6 +13,7 @@
     <%= link_to root_path, :action => 'go' do %>
       <header><%= t('welcome') %><h1>Blogoverse!</h1></header>
     <% end %>
+    <%= link_to 'New Post', new_user_post_path(@current_user), class: 'btn sketchy', id: 'new_post' %>
     <main><%= yield %></main>
   </body>
 </html>

@@ -1,2 +1,7 @@
 <h2><%= t('new_post') %></h2>
-<%= render partial: 'posts/form', locals: { post: post } %>
+<%= render partial: 'form', locals: { post: post } %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
