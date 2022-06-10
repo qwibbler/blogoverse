@@ -1,8 +1,4 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+<%= render 'shared/flash' %>
 
 <div class="post fullpage text_box sketchy">
   <div class="headline">
@@ -14,4 +10,4 @@
   <%= like_btn %>
 </div>
 <%= list_comments(@comments) %>
-<%= render partial: 'comments/comment_form' %>
+<%= render partial: 'comment_form' %>

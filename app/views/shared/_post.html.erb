@@ -1,4 +1,4 @@
-<%= link_to [post.user, post], :action => 'go' do %>
+<%= link_to [@user, post], :action => 'go' do %>
   <div class="post sketchy text_box">
     <h3><%= post.title %></h3>
     <%= truncate(post.text, :length => 118) %>
