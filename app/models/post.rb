@@ -17,17 +17,15 @@ class Post < ApplicationRecord
   end
 
   def update_likes_count
-    new = Like.where(post_id: id).count
-    update(likes_counter: new)
+    update(likes_counter: likes.count)
   end
 
   def update_comments_count
-    new = Comment.where(post_id: id).count
-    update(comments_counter: new)
+    update(comments_counter: comments.count)
   end
 
   def recent_comments
-    Comment.limit(5).where(post_id: id).order(created_at: :asc)
+    comments.limit(5).order(created_at: :asc)
   end
 
   def liked?(user = @current_user)

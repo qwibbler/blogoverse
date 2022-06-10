@@ -10,11 +10,10 @@ class User < ApplicationRecord
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
   def update_posts_count
-    new = Post.where(user_id: id).count
-    update(posts_counter: new)
+    update(posts_counter: posts.count)
   end
 
   def recent_posts
-    Post.limit(3).where(user_id: id).order(created_at: :desc)
+    posts.limit(3).order(created_at: :desc)
   end
 end

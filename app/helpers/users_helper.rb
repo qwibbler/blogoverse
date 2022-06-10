@@ -11,7 +11,7 @@ module UsersHelper
 
   def bio
     out = ''
-    out << if @user.bio.nil? || @user.bio.empty?
+    out << if @user.bio.empty?
              t('no_bio')
            else
              @user.bio
@@ -21,7 +21,7 @@ module UsersHelper
 
   def see_all_btn
     out = ''
-    unless @user.posts_counter.nil? || @user.posts_counter <= 3
+    unless @user.posts_counter <= 3
       out << link_to('See All Posts', user_posts_path(@user),
                      class: 'btn sketchy', id: 'see_all')
     end

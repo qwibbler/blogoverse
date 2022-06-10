@@ -1,5 +1,5 @@
 <%= form_with model: @comment, class: 'form-comment',
-  url: user_post_comments_path(@comment.post.user, @comment.post) do |f| %>
+  url: user_post_comments_path(@post.user, @post) do |f| %>
     <div class="form-div">
       <%= f.label :text, @current_user.name + ' ' + t('comment_says') %>
       <%= f.text_area :text, :class => "sketchy" %>
