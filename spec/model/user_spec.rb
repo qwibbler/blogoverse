@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
 
   before(:example) { subject.save }
 
-  describe 'Name Should be ' do
+  describe 'Name should be' do
     it 'present' do
       subject.name = nil
       expect(subject).to_not be_valid
@@ -26,19 +26,19 @@ RSpec.describe User, type: :model do
     end
 
     it 'less than or equal 30 characters' do
-      subject.name = 'qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm'
+      subject.name = 't' * 31
       expect(subject).to_not be_valid
     end
   end
 
-  describe 'Posts_counter should be ' do
+  describe 'Posts_counter should be' do
     it 'present' do
       subject.posts_counter = nil
       expect(subject).to_not be_valid
     end
 
     it 'integer' do
-      subject.posts_counter ='eight'
+      subject.posts_counter = 'eight'
       expect(subject).to_not be_valid
     end
 
