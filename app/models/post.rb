@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: 'post_id'
   has_many :likes, foreign_key: 'post_id'
 
+  before_destroy :destroy_likes_comments
+
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
 
@@ -30,5 +32,10 @@ class Post < ApplicationRecord
 
   def liked?(user = current_user)
     !!likes.find { |like| like.user == user }
+  end
+
+  def destroy_likes_comments
+    likes.destroy_all
+    comments.destroy_all
   end
 end
