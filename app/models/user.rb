@@ -14,10 +14,10 @@ class User < ApplicationRecord
   validates :posts_counter, numericality: { only_integer: true }
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
 
-  Roles = %i[admin user].freeze
+  ROLES = %i[admin user].freeze
 
-  def is?( requested_role )
-    self.role == requested_role.to_s
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 
   def update_posts_count

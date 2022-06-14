@@ -7,6 +7,7 @@ class Ability
 
     can :manage, Post, user_id: user.id
     can :create, Comment
+    can :manage, Comment, user_id: user.id
     can :create, Like
     return unless user.is? 'admin'
 
