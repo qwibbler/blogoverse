@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     @post = Post.find(params[:post_id])
     @like = Like.new
     @like.post = @post
-    @like.user = @current_user
+    @like.user = current_user
     if @like.save
       @like.update_likes_count
       redirect_to [@post.user, @post]

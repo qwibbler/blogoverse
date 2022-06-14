@@ -28,7 +28,7 @@ class Post < ApplicationRecord
     comments.limit(5).order(created_at: :asc)
   end
 
-  def liked?(user = @current_user)
+  def liked?(user = current_user)
     !!likes.find { |like| like.user == user }
   end
 end
