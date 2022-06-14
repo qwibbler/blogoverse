@@ -13,7 +13,15 @@
     <%= link_to root_path, :action => 'go' do %>
       <header><%= t('welcome') %><h1>Blogoverse!</h1></header>
     <% end %>
-    <%= link_to 'New Post', new_user_post_path(@current_user), class: 'btn sketchy', id: 'new_post' %>
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_registration_path, class: 'btn sketchy' %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn sketchy' %>
+      <%= link_to 'New Post', new_user_post_path(current_user), class: 'btn sketchy', id: 'new_post' %>
+    <% else %>
+      <%= link_to "Log In", new_user_session_path, class: 'btn sketchy' %>
+    <% end %>
     <main><%= yield %></main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
