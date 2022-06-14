@@ -35,13 +35,20 @@ header {
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-top: 0;
   line-height: 0.5;
+}
+
+nav.grid {
+  width: 95%;
+  grid-auto-flow: column;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 }
 
 .grid {
@@ -125,8 +132,12 @@ input[type="submit"],
 form {
   display: grid;
   gap: 0.5rem;
-  margin: 1rem;
   align-items: center;
+  margin: 1rem;
+}
+
+.button_to {
+  margin: 0;
 }
 
 label {
