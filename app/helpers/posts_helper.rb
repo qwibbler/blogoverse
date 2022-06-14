@@ -9,7 +9,7 @@ module PostsHelper
     if current_user
       if @post.liked?(current_user)
         button_to(t('liked'), user_post_likes_path(@post.user, @post), method: :post, disabled: true,
-                                                                      class: 'btn sketchy')
+                                                                       class: 'btn sketchy')
       else
         button_to(t('like'), user_post_likes_path(@post.user, @post), method: :post, class: 'btn sketchy')
       end
