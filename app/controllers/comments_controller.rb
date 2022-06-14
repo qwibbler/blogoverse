@@ -11,4 +11,10 @@ class CommentsController < ApplicationController
       redirect_back fallback_location: root_path, notice: t('comment_error')
     end
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to user_post_path(@comment.post.user, @comment.post), notice: t('comment_deleted')
+  end
 end

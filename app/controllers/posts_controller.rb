@@ -26,4 +26,11 @@ class PostsController < ApplicationController
       render :new, locals: { post: @new_post }
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    user = @post.user
+    @post.destroy
+    redirect_to user_posts_path(user), notice: t('post_deleted')
+  end
 end

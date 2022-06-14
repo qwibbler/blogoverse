@@ -50,3 +50,6 @@ en:
   like: "Like ❦"
   liked: "Liked! ❧"
   like_error: "Error: Like could not be submitted."
+  delete: "Delete"
+  post_deleted: "Post successfully deleted."
+  comment_deleted: "Comment successfully deleted."

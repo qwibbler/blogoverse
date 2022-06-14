@@ -2,5 +2,8 @@
   <h4><%= t('comments:') %></h4>
   <% comments.each do |comment|  %>
     <li><b><%= comment.user.name %>:</b> <%= comment.text %></li>
+    <% if can? :delete, comment %>
+      <%= button_to t("delete"),  user_post_comment_path(comment.post.user, comment.post, comment), method: :delete, class: "btn sketchy" %>
+    <% end %>
   <% end %>
 </div>
