@@ -14,16 +14,6 @@
   </div>
 
   <div class="form-div">
-    <%= f.label :photo %><br />
-    <%= f.text_field :photo, autofocus: true, autocomplete: "photo", :class => "sketchy" %>
-  </div>
-
-  <div class="form-div">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, autofocus: true, autocomplete: "bio", :class => "sketchy" %>
-  </div>
-
-  <div class="form-div">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
