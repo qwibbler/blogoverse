@@ -15,9 +15,9 @@
     <% end %>
     <nav class="grid">
       <% if current_user %>
+        <%= link_to 'New Post', new_user_post_path(current_user), class: 'btn sketchy', id: 'new_post' %>
         <%= link_to "Edit Profile", edit_user_registration_path, class: 'btn sketchy' %>
         <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn sketchy' %>
-        <%= link_to 'New Post', new_user_post_path(current_user), class: 'btn sketchy', id: 'new_post' %>
       <% else %>
         <%= link_to "Sign Up", new_user_registration_path, class: 'btn sketchy' %>
         <%= link_to "Log In", new_user_session_path, class: 'btn sketchy' %>
