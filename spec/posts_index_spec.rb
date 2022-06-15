@@ -11,11 +11,9 @@ RSpec.describe 'Posts Page', type: :system do
     Comment.create(user: @first_user, post: @first_post, text: '1-comment')
     Comment.create(user: @first_user, post: @first_post, text: '2-comment')
     Comment.create(user: @first_user, post: @first_post, text: '3-comment')
-
     @first_post.update_comments_count
 
     Like.create(user: @first_user, post: @first_post)
-
     @first_post.update_likes_count
   end
 
@@ -42,7 +40,7 @@ RSpec.describe 'Posts Page', type: :system do
       expect(page).to have_content('asdisadokjpsdaposacopasclscmlçcsacsacsa')
     end
 
-    it "can see the first comments on a post" do
+    it 'can see the first comments on a post' do
       expect(page).to have_content('1-comment')
       expect(page).to have_content('2-comment')
       expect(page).to have_content('3-comment')
