@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
-  # before(:example) { get '/users/1' }
+  # before(:example) { visit users_path }
   # describe 'Index:' do
   #   before(:example) { get '/users' }
   #   it 'responds correctly' do
+  #     sleep(5)
   #     expect(response.status).to eq(200)
   #   end
 
-  #   it 'renders correct template' do
-  #     expect(response).to render_template(:index)
-  #   end
+    # it 'renders correct template' do
+    #   expect(response).to render_template(:index)
+    # end
 
-  #   it 'shows correct text' do
-  #     expect(response.body).to include('Home page with users and post numbers')
-  #   end
+    # it 'shows correct text' do
+    #   expect(response.body).to include('Home page with users and post numbers')
+    # end
   # end
 
   # describe 'Show:' do
