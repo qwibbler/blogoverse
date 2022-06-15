@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Login Page', type: :system do
   describe 'has  email and password inputs and the "Submit" button.' do
-    before_action { visit new_user_session_path }
+    before(:example) { visit new_user_session_path }
     it 'has label for email' do
       expect(page).to have_content('Email')
     end
@@ -17,6 +17,25 @@ RSpec.describe 'Login Page', type: :system do
     end
     it 'has button for login' do
       expect(page).to have_selector('input[type="submit"]')
+    end
+  end
+
+  describe 'When I click the submit button' do
+    before(:example) { visit new_user_session_path }
+
+    it 'gets a detailed error when without filling in the username and the password' do
+      click_button 'Log in'
+      expect(page).to have_content('Invalid Email or password')
+    end
+
+    it 'gets a detailed error after filling in the username and the password with incorrect data' do
+      within("#new_user") do
+        fill_in 'Email', with: 'user@example.com'
+        fill_in 'Password', with: 'password'
+      end
+
+      click_button 'Log in'
+      expect(page).to have_content('Invalid Email or password')
     end
   end
 end
