@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     User.new(
       name: 'Tom Sawyer',
       email: 'user1@example.com',
-      password: 'password',                        
+      password: 'password',
       photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1',
       bio: 'Teacher from Mexico.',
       confirmed_at: Time.now
