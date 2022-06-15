@@ -29,7 +29,7 @@ RSpec.describe 'Login Page', type: :system do
     end
 
     it 'gets a detailed error after filling in the username and the password with incorrect data' do
-      User.make(name:'user', email: 'user@example.com', password: 'password')
+      User.create(name: 'user', email: 'user@example.com', password: 'password', confirmed_at: Time.now)
       within("#new_user") do
         fill_in 'Email', with: 'wrong_user@example.com'
         fill_in 'Password', with: 'wrong_password'
@@ -40,14 +40,15 @@ RSpec.describe 'Login Page', type: :system do
     end
 
     it 'redirect to root pg after filling in the username and the password with correct data' do
-      User.make(name:'user', email: 'user@example.com', password: 'password')
+      User.create(name: 'user', email: 'user@example.com', password: 'password', confirmed_at: Time.now)
       within("#new_user") do
         fill_in 'Email', with: 'user@example.com'
         fill_in 'Password', with: 'password'
       end
 
       click_button 'Log in'
-      expect(page).to have_current_path(users_path)
+
+      expect(page).to have_current_path(root_path)
     end
   end
 end
