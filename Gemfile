@@ -81,6 +81,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Devise
 gem 'devise'
+gem 'jwt'
 
 # Cancancan
 gem 'cancancan'
