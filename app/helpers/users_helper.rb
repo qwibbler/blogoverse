@@ -12,7 +12,7 @@ module UsersHelper
   def bio
     out = ''
     out << if @user.bio.empty?
-             t('no_bio')
+             "<em style='text-align:center;'> #{t('no_bio')} <b>Blogoverse!</b></em>"
            else
              @user.bio
            end

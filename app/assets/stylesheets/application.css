@@ -84,7 +84,11 @@ nav.grid {
 
 small {
   font-family: 'Caveat', cursive;
-  align-self: flex-end;
+}
+
+.manip {
+  display: flex;
+  justify-content: space-around;
 }
 
 h2,
@@ -202,4 +206,19 @@ input[type="text"] {
 
 .pagination > .disabled {
   color: #999;
+}
+
+.sys {
+  background-color: #e4ede6;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Rock Salt', cursive;
+}
+
+.notice {
+  background-color: #e4ede6;
+}
+
+.alert {
+  background-color: #ede4e4;
 }

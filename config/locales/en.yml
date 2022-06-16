@@ -37,15 +37,15 @@ en:
   likes: "Likes: "
   see_all_posts: "See All Posts"
   no_users: "Currently our 'verse is lonely. Please create users to join our "
-  no_bio: "<em style='text-align:center;'>A lovely member of our <b>Blogoverse!</b> community.</em>"
+  no_bio: "A lovely member of our <b>Blogoverse!</b> community."
   new_post: "New Post"
   post_title: "Title"
   post_text: "Text"
   post_submit: "Post"
-  post_success: 'Your post has been published successfully.'
+  post_success: 'Post successfully published.'
   post_error: "Error: Post could not be created."
   comment_says: "says:"
-  comment_success: 'Your comment has been sent successfully.'
+  comment_success: 'Comment successfully sent.'
   comment_error: "Error: Comment could not be created."
   like: "Like ❦"
   liked: "Liked! ❧"
@@ -53,3 +53,6 @@ en:
   delete: "X"
   post_deleted: "Post successfully deleted."
   comment_deleted: "Comment successfully deleted."
+  edit: "✎"
+  edit_success: 'Post successfully edited.'
+  edit_error: "Error: Post could not be edited."
