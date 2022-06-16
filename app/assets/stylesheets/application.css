@@ -169,3 +169,17 @@ input[type="text"] {
   width: 60vw;
   margin: auto;
 }
+
+.all_comments {
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dotted;
+  border-image: linear-gradient(to right, white, #818181, white) 1;
+}
