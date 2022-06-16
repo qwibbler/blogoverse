@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post: @post)
+    render :json => @comments
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(params.require(:comment).permit(:text))
