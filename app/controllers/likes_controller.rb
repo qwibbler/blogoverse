@@ -10,4 +10,10 @@ class LikesController < ApplicationController
       redirect_back fallback_location: root_path, notice: t('like_error')
     end
   end
+
+  def destroy
+    @like = Like.find(params[:id])
+    @like.destroy
+    redirect_to user_post_path(@like.post.user, @like.post), notice: t('like_deleted')
+  end
 end
