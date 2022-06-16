@@ -1,5 +1,6 @@
 module Api
   class ApiController < ActionController::Base
+    protect_from_forgery with: :null_session
     # before_action :check_basic_auth
     # skip_before_action :verify_authenticity_token
 
