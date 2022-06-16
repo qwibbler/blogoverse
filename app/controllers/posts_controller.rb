@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.paginate(page: params[:page], per_page: 5).order(created_at: :desc).includes(comments: [:user])
+    render :json => @posts
   end
 
   def show
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
 
     @comment = @post.comments.build
     @like = @post.likes.build
+    render :json => @post
   end
 
   def new
