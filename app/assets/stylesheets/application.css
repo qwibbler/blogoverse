@@ -83,6 +83,7 @@ nav.grid {
 }
 
 small {
+  font-family: 'Caveat', cursive;
   align-self: flex-end;
 }
 
@@ -102,6 +103,7 @@ input[type="submit"],
   font-family: 'Rock Salt', cursive;
   padding: 0 0.5rem;
   font-size: 11px;
+  cursor: pointer;
 }
 
 .btn::before {
@@ -182,4 +184,22 @@ input[type="text"] {
   margin-bottom: 0.5rem;
   border-bottom: 1px dotted;
   border-image: linear-gradient(to right, white, #818181, white) 1;
+}
+
+.pagination {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+}
+
+.pagination > em {
+  font-size: x-large;
+}
+
+.pagination > em::before,
+.pagination > em::after {
+  content: '.';
+}
+
+.pagination > .disabled {
+  color: #999;
 }
