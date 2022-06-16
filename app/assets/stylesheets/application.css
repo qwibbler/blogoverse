@@ -222,3 +222,15 @@ input[type="text"] {
 .alert {
   background-color: #ede4e4;
 }
+
+form i {
+  align-self: flex-start;
+  font-size: 12px;
+}
+
+hr.sketchy {
+  width: 60vw;
+  margin: 0 auto;
+  height: 0;
+  border-width: 1px;
+}
