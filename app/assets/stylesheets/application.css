@@ -83,7 +83,12 @@ nav.grid {
 }
 
 small {
-  align-self: flex-end;
+  font-family: 'Caveat', cursive;
+}
+
+.manip {
+  display: flex;
+  justify-content: space-around;
 }
 
 h2,
@@ -102,6 +107,7 @@ input[type="submit"],
   font-family: 'Rock Salt', cursive;
   padding: 0 0.5rem;
   font-size: 11px;
+  cursor: pointer;
 }
 
 .btn::before {
@@ -168,4 +174,63 @@ input[type="text"] {
   align-items: center;
   width: 60vw;
   margin: auto;
+}
+
+.all_comments {
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dotted;
+  border-image: linear-gradient(to right, white, #818181, white) 1;
+}
+
+.pagination {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+}
+
+.pagination > em {
+  font-size: x-large;
+}
+
+.pagination > em::before,
+.pagination > em::after {
+  content: '.';
+}
+
+.pagination > .disabled {
+  color: #999;
+}
+
+.sys {
+  background-color: #e4ede6;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Rock Salt', cursive;
+}
+
+.notice {
+  background-color: #e4ede6;
+}
+
+.alert {
+  background-color: #ede4e4;
+}
+
+form i {
+  align-self: flex-start;
+  font-size: 12px;
+}
+
+hr.sketchy {
+  width: 60vw;
+  margin: 0 auto;
+  height: 0;
+  border-width: 1px;
 }

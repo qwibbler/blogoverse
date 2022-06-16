@@ -2,14 +2,23 @@
   <div class="headline">
     <h3><%= @post.title %><br>
     by <%= link_to @post.user.name, @post.user %></h3>
-    <%= render partial: 'shared/comments_likes', locals: { post: @post } %>
+    <div class="small">
+      <div class="manip">
+        <% if can? :edit, @post %>
+          <%= link_to t("edit"), edit_user_post_path(@post.user, @post), method: :get, class: "btn sketchy" %>
+        <% end %>
+        <% if can? :delete, @post %>
+          <%= button_to t("delete"),  user_post_path(@post.user, @post), method: :delete, class: "btn sketchy" %>
+        <% end %>
+      </div>
+      <%= render partial: 'shared/comments_likes', locals: { post: @post } %>
+    </div>
   </div>
   <%= @post.text %>
   <%= like_btn %>
-  <% if can? :delete, @post %>
-    <%= button_to t("delete"),  user_post_path(@post.user, @post), method: :delete, class: "btn sketchy" %>
-  <% end %>
 </div>
+
+<%# Comments %>
 <%= list_comments(@comments) %>
 <% if current_user %>
   <%= render partial: 'comment_form' %>

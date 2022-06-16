@@ -11,9 +11,8 @@ module PostsHelper
     if @post.liked?(current_user)
       button_to(
         t('liked'),
-        user_post_likes_path(@post.user, @post),
-        method: :post,
-        disabled: true,
+        user_post_like_path(@post.user, @post, @post.likes.find_by(user: current_user)),
+        method: :delete,
         class: 'btn sketchy'
       )
     else

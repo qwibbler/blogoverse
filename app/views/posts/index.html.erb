@@ -1,8 +1,9 @@
 <div class="fullpage grid">
   <%= render partial: 'shared/user', object: @user %>
-
   <% @posts.each do |post| %>
     <%= render partial: 'shared/post', object: post %>
-    <%= list_comments(post.comments) %>
+    <%= list_comments(post.recent_comments) %>
   <% end %>
+
+  <%= will_paginate @posts %>
 </div>

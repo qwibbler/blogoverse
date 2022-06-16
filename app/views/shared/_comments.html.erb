@@ -1,9 +1,13 @@
 <div class="comments text_box sketchy">
   <h4><%= t('comments:') %></h4>
-  <% comments.each do |comment|  %>
-    <li><b><%= comment.user.name %>:</b> <%= comment.text %></li>
-    <% if can? :delete, comment %>
-      <%= button_to t("delete"),  user_post_comment_path(comment.post.user, comment.post, comment), method: :delete, class: "btn sketchy" %>
+  <div class="all_comments">
+    <% comments.each do |comment|  %>
+      <li class="comment">
+        <p><b><%= comment.user.name %>:</b> <%= comment.text %></p>
+        <% if can? :delete, comment %>
+          <%= button_to t("delete"),  user_post_comment_path(comment.post.user, comment.post, comment), method: :delete, class: "btn sketchy" %>
+        <% end %>
+      </li>
     <% end %>
-  <% end %>
+  </div>
 </div>

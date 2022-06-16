@@ -1,2 +1,12 @@
-<%= render partial: 'post_form', locals: { post: post } %>
-
+<%= form_with model: @post, data: { behavior: "autosave" },
+url: @url do |f| %>
+  <div class="form-div">
+    <%= f.label :title, t('post_title') %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-div">
+    <%= f.label :text, t('post_text') %>
+    <%= f.text_area :text %>
+  </div>
+  <div><%= f.submit :class => "sketchy" %></div>
+<% end %>

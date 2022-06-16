@@ -4,22 +4,22 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-div">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, autocomplete: "Name", :class => "sketchy" %>
   </div>
 
   <div class="form-div">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "sketchy" %>
   </div>
 
   <div class="form-div">
-    <%= f.label :photo %><br />
+    <%= f.label :photo %>
     <%= f.text_field :photo, autofocus: true, autocomplete: "photo", :class => "sketchy" %>
   </div>
 
   <div class="form-div">
-    <%= f.label :bio %><br />
+    <%= f.label :bio %>
     <%= f.text_area :bio, autofocus: true, autocomplete: "bio", :class => "sketchy" %>
   </div>
 
@@ -28,22 +28,25 @@
   <% end %>
 
   <div class="form-div">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", :class => "sketchy" %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <i><%= @minimum_password_length %> characters minimum</i>
     <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Leave blank if you don't want to change your password", :class => "sketchy" %>
   </div>
 
   <div class="form-div">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "sketchy" %>
   </div>
 
+  <br />
+  <hr class="sketchy">
+
   <div class="form-div">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %>
     <%= f.password_field :current_password, autocomplete: "current-password", :class => "sketchy" %>
+    <i>(we need your current password to confirm your changes)</i>
   </div>
 
   <div class="actions">
@@ -58,4 +61,5 @@
   </p>
 </div>
 
-<%= link_to "Back", :back %>
+<br />
+<%= link_to "Back", :back, class: "btn sketchy" %>
