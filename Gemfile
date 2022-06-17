@@ -89,3 +89,6 @@ gem 'cancancan'
 # Pagination
 # gem 'kaminari'
 gem 'will_paginate'
+
+# API Rswag
+gem 'rswag'
