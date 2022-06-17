@@ -1,29 +1,22 @@
 module Api
-  class ApiController < ActionController::Base
+  class ApiController < ApplicationController
     protect_from_forgery with: :null_session
-    # before_action :check_basic_auth
-    # skip_before_action :verify_authenticity_token
+    skip_before_action :verify_authenticity_token
 
-    # private
-    # def check_basic_auth
-    #   unless request.authorization.present?
-    #     head :unauthorized
-    #     return
-    #   end
+    def find_user_by_token(token)
+      User.where(token: token)[0]
+    end
 
-    #   authenticate_with_http_basic do |email, password|
-    #     user = User.find_by(email: email.downcase)
+    def authenticate_user(user)
+      unless user
+        render json: { success: false, errors: 'Invalid Token' }, status: 400
+      end
+      true
+    end
 
-    #     if user && user.authenticate(password)
-    #       @current_user = user
-    #     else
-    #       head :unauthorized
-    #     end
-    #   end
-    # end
-
-    # def current_user
-    #   @current_user
-    # end
+    def find_user_and_authenticate(token)
+      user = find_user_by_token(token)
+      authenticate_user(user)
+    end
   end
 end
