@@ -3,9 +3,10 @@
 # BlogoVerse
 
 > A Blogoverse for dedicated bloggers to blog in peace. Made with Ruby on Rails.
-![home_page](./app/assets/images/front.png)
-![home_page](./app/assets/images/user.png)
-![home_page](./app/assets/images/post2.png)
+
+ |   |   |   |
+ | - |:-:| -:|
+ |![home_page](./app/assets/images/front.png) | ![home_page](./app/assets/images/user.png) | ![home_page](./app/assets/images/post2.png) |
 
 ## Built With
 
