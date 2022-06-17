@@ -43,7 +43,7 @@ To get a local copy up and running follow these simple example steps.
 - You can also edit your profile data to add your personal information or a profile picture.
 - You can blog to your heart's content with this website.
 - You can view all the users and their posts, as well like and comment on them.
-- You can view the backend API at `localhost:3000/api`.
+- You can view the backend API at `localhost:3000/api_docs`.
 ### Run tests
 - Run `rspec` in your terminal.
 <!-- ### Deployment -->

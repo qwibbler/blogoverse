@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'swagger_helper'
 
 RSpec.describe 'API Comments', type: :request do
@@ -97,7 +98,7 @@ RSpec.describe 'API Comments', type: :request do
         let(:token) do
           User.create(name: 'Jason', email: 'jason@example.com', password: 'password', confirmed_at: Time.now).token
         end
-        let(:text) {}
+        let(:text) { nil }
         let(:id) do
           user = User.create(name: 'Maria', email: 'maria@example.com', password: 'password', confirmed_at: Time.now)
           Post.create(user:, title: 'title-first', text: 'test').id
@@ -107,3 +108,4 @@ RSpec.describe 'API Comments', type: :request do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
