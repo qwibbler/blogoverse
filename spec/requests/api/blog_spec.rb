@@ -4,12 +4,12 @@ RSpec.describe 'Blog API', type: :request do
   path '/api/posts' do
     get 'Retrieves all posts' do
       tags 'Posts'
-      consumes 'application/json'
-      parameter name: :token, in: :body, type: :string
+      consumes 'multipart/form-data'
+      parameter name: :token, in: :formData, type: :string, required: true
 
       response '200', 'OK' do
-        schema type: :object,
-               properties: {
+        schema type: :array,
+               items: {
                  id: { type: :integer },
                  title: { type: :string },
                  text: { type: :string },
@@ -19,7 +19,9 @@ RSpec.describe 'Blog API', type: :request do
                  updated_at: { type: :datetime }
                },
                required: %w[id user_id title text comments_counter likes_counter created_at updated_at]
-        let(:token) { User.create(name: 'Empty', email: 'empty@example.com', password: 'password', confirmed_at: Time.now).token }
+        let(:token) do
+          User.create(name: 'Empty', email: 'empty@example.com', password: 'password', confirmed_at: Time.now).token
+        end
         run_test!
       end
 
@@ -30,4 +32,3 @@ RSpec.describe 'Blog API', type: :request do
     end
   end
 end
-
