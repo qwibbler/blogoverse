@@ -1,28 +1,33 @@
 module Api
-  class CommentsController < ApiController    
+  class CommentsController < ApiController
     def index
-      find_user_and_authenticate(params[:token])
-      @post = Post.find(params[:post_id])
-      render json: @post.comments
-    end
-
-    def create
-      user = find_user_by_token(params[:token])
-      authenticate_user(user)
-      @post = Post.find(params[:post_id])
-      @comment = Comment.create(user: user, post: @post, text: params[:text])
-      
-      if @comment.id
-        puts "Comment created"
-        render json: { success: true, data: { comment: @comment } }, status: :created
+      if get_user_by_token(params[:token]).nil?
+        render json: { success: false, errors: 'Invalid Token' }, status: 400
       else
-        puts "Comment failed"
-        render json: { success: false, errors: @comment.errors }, status: 400
+        @post = Post.find(params[:post_id])
+        render json: @post.comments, status: 200
       end
     end
 
-    def comment_params
-      params.permit(:text)
+    def create
+      user = get_user_by_token(params[:token])
+      @post = Post.find(params[:post_id])
+
+      if user.nil?
+        render json: { success: false, errors: 'Invalid Token' }, status: 400
+        return
+      elsif params[:text].nil?
+        render json: { success: false, errors: 'Comment must have text' }, status: 400
+        return
+      end
+
+      @comment = Comment.create(user:, post: @post, text: params[:text])
+
+      if @comment.id
+        render json: { success: true, data: { comment: @comment } }, status: :created
+      else
+        render json: { success: false, errors: @comment.errors }, status: 400
+      end
     end
   end
 end

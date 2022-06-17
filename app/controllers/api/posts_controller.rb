@@ -1,8 +1,12 @@
 module Api
   class PostsController < ApiController
     def index
-      @posts = Post.all.order(created_at: :desc)
-      render json: @posts
+      if get_user_by_token(params[:token]).nil?
+        render json: { success: false, errors: 'Invalid Token' }, status: 400
+      else
+        @posts = Post.all.order(created_at: :desc)
+        render json: @posts
+      end
     end
   end
 end
