@@ -5,7 +5,7 @@ module Api
         render json: { success: false, errors: 'Invalid Token' }, status: 400
       else
         @posts = Post.all.order(created_at: :desc)
-        render json: @posts
+        render json: @posts, status: 200
       end
     end
   end

@@ -3,12 +3,18 @@
 # BlogoVerse
 
 > A Blogoverse for dedicated bloggers to blog in peace. Made with Ruby on Rails.
+![home_page](./app/assets/images/front.png)
+![home_page](./app/assets/images/user.png)
+![home_page](./app/assets/images/post2.png)
 
 ## Built With
 
 - Ruby
 - Rails
 - Rubocop
+- Devise
+- Rspec
+- Capybara
 
 ## Getting Started
 
@@ -22,19 +28,25 @@ To get a local copy up and running follow these simple example steps.
 - Yarn
 - Rails
 ### Setup
-- Clone the repository using `git clone https://github.com/qwibbler/blogoverse`
-- `cd` into the project folder
-- Create the Databases `blogoverse_production`, `blogoverse_development` and `blogoverse_test` in PostgreSQL
-- Update your credentials in the `\config\database.yml`
+- Clone the repository using `git clone https://github.com/qwibbler/blogoverse`.
+- `cd` into the project folder.
+- Update your database credentials in the `\config\database.yml`.
+
 ### Install
-- Run `bundle install` in your terminal
+- Run `bundle install` in your terminal to install all the required dependencies.
+- Run `rails db:setup` to configure your database.
+- Run `rails s` to start the server.
+- Go to `localhost:3000` (or whatever port the server is listening on).
 
 ### Usage
+- You can sign up with new user, or log in if you already have an account.
+- You can also edit your profile data to add your personal information or a profile picture.
 - You can blog to your heart's content with this website.
+- You can view all the users and their posts, as well like and comment on them.
+- You can view the backend API at `localhost:3000/api_docs`.
 ### Run tests
 - Run `rspec` in your terminal.
 <!-- ### Deployment -->
-
 
 ## Authors
 
@@ -56,9 +68,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thank you to [Leonardo Goss](https://github.com/leopiresgoss) for his contribution and unstinting support and encouragement.
+- And thank you to everyone on the internet for publishing numerous guides and solutions that made this project possible.
 
 ## 📝 License
 

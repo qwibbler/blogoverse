@@ -53,6 +53,7 @@ en:
   delete: "X"
   post_deleted: "Post successfully deleted."
   comment_deleted: "Comment successfully deleted."
+  like_deleted: "Like successfully deleted."
   edit: "✎"
   edit_success: 'Post successfully edited.'
   edit_error: "Error: Post could not be edited."

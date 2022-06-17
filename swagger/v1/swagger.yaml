@@ -1,0 +1,71 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/posts/{id}/comments":
+    get:
+      summary: Retrieves all comments of a post
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Token
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+        required: true
+    post:
+      summary: Posts a new comment
+      tags:
+      - Comments
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Comment must have text
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+        required: true
+  "/api/posts":
+    get:
+      summary: Retrieves all posts
+      tags:
+      - Posts
+      parameters: []
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Token
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+        required: true
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

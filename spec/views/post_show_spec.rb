@@ -11,7 +11,7 @@ RSpec.describe 'Post1 Page', type: :system do
     @third_user = User.create(name: 'user3', email: 'user3@example.com', password: 'password',
                               photo: 'https://images.unsplash.com/photo-1616587894289-86480e533129',
                               confirmed_at: Time.now)
-    @first_post = Post.create(user: @first_user, title: 'title-first', text: 'asdisadokjpsdaposacopasclscmlçcsacsacsa')
+    @first_post = Post.create(user: @first_user, title: 'title-first', text: 'asdisadokjpsdaposacopasclscmlçcsacsa')
     @first_post.update_posts_count
 
     Comment.create(user: @second_user, post: @first_post, text: '1-comment')
@@ -38,7 +38,7 @@ RSpec.describe 'Post1 Page', type: :system do
     end
 
     it "can see a post's body" do
-      expect(page).to have_content('asdisadokjpsdaposacopasclscmlçcsacsacsa')
+      expect(page).to have_content('asdisadokjpsdaposacopasclscmlçcsacsa')
     end
 
     it 'can see username of each commentor' do
