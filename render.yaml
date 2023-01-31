@@ -9,7 +9,7 @@ services:
     env: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec rails s"
+    startCommand: "bundle exec rails s --trace"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
