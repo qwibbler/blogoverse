@@ -1,0 +1,19 @@
+databases:
+  - name: blogoverse
+    databaseName: blogoverse
+    user: blogoverse
+
+services:
+  - type: web
+    name: blogoverse
+    env: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails s --trace"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: blogoverse
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
